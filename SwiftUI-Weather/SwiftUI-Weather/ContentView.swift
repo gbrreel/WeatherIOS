@@ -10,10 +10,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ZStack { // Substituí VStack por ZStack
             LinearGradient(gradient: Gradient(colors: [.blue, .white]),
-                           startPoint: .topLeading, endPoint: .bottomTrailing)
+                           startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Text("Joinville, SC")
+                    .font(.system(size: 32, weight: .medium, design: .default))
+                    .foregroundColor(.white)
+                    .padding()
+                
+                VStack{
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                }
+                Spacer()
+            }
         }
     }
 }
