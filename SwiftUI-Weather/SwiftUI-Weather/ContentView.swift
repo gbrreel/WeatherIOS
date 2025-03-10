@@ -22,10 +22,34 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .padding()
                 
-                VStack{
+                VStack(spacing: 8) {
                     Image(systemName: "cloud.sun.fill")
                         .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 180, height: 180)
+                    
+                    Text("36°")
+                        .font(.system(size: 70, weight: .medium))
+                        .foregroundColor(.white)
                 }
+                
+                HStack{
+                    VStack{
+                        Text("TUE")
+                            .font(.system(size: 16, weight: .medium ))
+                        Image(systemName: "cloud.sun.fill")
+                            .renderingMode(.original)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                        
+                        Text("36°")
+                            .font(.system(size: 70, weight: .medium))
+                            .foregroundColor(.white)
+                    }
+                }
+                
                 Spacer()
             }
         }
